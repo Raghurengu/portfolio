@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" integrity="sha256-2XFplPlrFClt0bIdPgpz8H7ojnk10H69xRqd9+uTShA=" crossorigin="anonymous" />
+
+    <title>Document</title>
+</head>
+
+<body>
+           <div class="continuous-7 center loader"></div>
+
+    <div class="wrapper">
+        <header>
+            <nav class="navigation">
+                <script>
+                    $(document).ready(function () {
+                        $(".menu-icon").on("click", function () {
+                            $("nav ul").toggleClass("showing");
+                        });
+                    });
+
+                    $(document).ready(function () {
+                        $(".as").on("click", function () {
+                            $("nav ul").toggleClass("showing");
+                        });
+                    });
+
+                    // Scrolling Effect
+
+                    $(window).on("scroll", function () {
+                        if ($(window).scrollTop()) {
+                            $('nav').addClass('black');
+                        } else {
+                            $('nav').removeClass('black');
+                        }
+                    })
+                </script>
+                <div class="menu-icon">
+                    <i class="fa fa-bars fa-2x"></i>
+                </div>
+                <div class="logo">
+                    Renganathan
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a class="as" href="#home">Home</a></li>
+                        <li><a class="as" href="#about">About</a></li>
+                        <li><a class="as" href="#skills">Skills</a></li>
+                        <li><a class="as" href="#project">Projects</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <!-- please dont touch this script this is for typing -->
+
+        <!-- end of this script -->
+        <section id="home">
+            <video playsinline autoplay muted loop id="bgvid">
+                <source src="./glo.mp4" type="video/mp4">
+                <script>
+                    document.querySelector('video').playbackRate = 0.4;
+                </script>
+            </video>
+            <div class="banner-content">
+                <h1 class="renga">Renganathan</h1>
+                <h3 class="text-muted typewrite">
+                    <script>
+                        var TxtType = function (el, toRotate, period) {
+                            this.toRotate = toRotate;
+                            this.el = el;
+                            this.loopNum = 0;
+                            this.period = parseInt(period, 10) || 2000;
+                            this.txt = '';
+                            this.tick();
+                            this.isDeleting = false;
+                        };
+
+                        TxtType.prototype.tick = function () {
+                            var i = this.loopNum % this.toRotate.length;
+                            var fullTxt = this.toRotate[i];
+
+                            if (this.isDeleting) {
+                                this.txt = fullTxt.substring(0, this.txt.length - 1);
+                            } else {
+                                this.txt = fullTxt.substring(0, this.txt.length + 1);
+                            }
+
+                            this.el.innerHTML = '<span class="wrap">' + this.txt + '</span>';
+
+                            var that = this;
+                            var delta = 200 - Math.random() * 100;
+
+                            if (this.isDeleting) {
+                                delta /= 2;
+                            }
+
+                            if (!this.isDeleting && this.txt === fullTxt) {
+                                delta = this.period;
+                                this.isDeleting = true;
+                            } else if (this.isDeleting && this.txt === '') {
+                                this.isDeleting = false;
+                                this.loopNum++;
+                                delta = 500;
+                            }
+
+                            setTimeout(function () {
+                                that.tick();
+                            }, delta);
+                        };
+
+                        window.onload = function () {
+                            var elements = document.getElementsByClassName('typewrite');
+                            for (var i = 0; i < elements.length; i++) {
+                                var toRotate = elements[i].getAttribute('data-type');
+                                var period = elements[i].getAttribute('data-period');
+                                if (toRotate) {
+                                    new TxtType(elements[i], JSON.parse(toRotate), period);
+                                }
+                            }
+                            // INJECT CSS
+                            var css = document.createElement("style");
+                            css.type = "text/css";
+                            css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+                            document.body.appendChild(css);
+                        };
+                    </script>
+
+                    <a href="" class="typewrite" data-period="100"
+                        data-type='[ "Microsoft Exchange Engineer.", "Coding Enthusiast.", "Badminton player.", "I Love to Develop websites." ]'>
+                        <span class="wrap"></span>
+                    </a>
+                </h3>
+            </div>
+        </section>
+
+        <section class="aboutus-area" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="aboutus-image float-left hidden-sm"><img
+                                    src="http://bestjquery.com/tutorial/hover-effect/demo206/images/img-2.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                            <div class="aboutus-content ">
+                                <h2>
+                                    <p><span>WELCOME TO ABEDESIGNS</span></p>
+                                    I'M The Best <span>Web Developer</span>
+                                </h2>
+
+                                <p>Far far away, behind the word mountains, far from the countries Vokalia and
+                                    Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
+                                    at the coast of the Semantics, a large language ocean.</p>
+                                <p>A small river named Duden flows by their place and supplies it with the necessary
+                                    regelialia. It is a paradisematic country, in which roasted parts of sentences fly
+                                    into your mouth.</p>
+
+                                <div class="counter ">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="single-counter text-center">
+                                            <h2 class="counter"><span>15</span></h2>
+                                            <p>YEARS OF EXPERIENCED</p>
+                                        </div>
+
+                                        <div class="single-counter text-center">
+                                            <h2 class="counter"><span>100</span></h2>
+                                            <p>WEBSITES COMPLETED</p>
+                                        </div>
+
+                                        <div class="single-counter text-center">
+                                            <h2 class="counter"><span>5</span></h2>
+                                            <p>AWARDS WON</p>
+                                        </div>
+
+                                        <div class="single-counter text-center">
+                                            <h2 class="counter"><span>10</span></h2>
+                                            <p>CLIENTS</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- start of progress bar i.e skills -->
+
+        <section class="pro" id="skills">
+<h1>Skills</h1>
+            <div class="row d-flex justify-content-center mt-100">
+
+                <div class="col-lg-3 col-md-4 col-6 ">
+                    <div class="progress blue shadow p-3 mb-5 rounded">
+                        <span class="progress-left ">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">HTML</div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6  ">
+                    <div class=" progress cs shadow p-3 mb-5 rounded">
+                        <span class=" progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class=" progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">CSS</div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6  ">
+                    <div class="progress js shadow p-3 mb-5 rounded">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">javaScript</div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6  ">
+                    <div class="progress bs shadow p-3 mb-5 rounded">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">Bootstrap</div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6  ">
+                    <div class="progress ms shadow p-3 mb-5 rounded">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">Microsoft<br>Exchange</div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6  ">
+                    <div class="progress ntw shadow p-3 mb-5 rounded">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">Networking</div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6  ">
+                    <div class="progress wins shadow p-3 mb-5 rounded">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">Windows<br>Server</div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6  ">
+                    <div class="progress linux shadow p-3 mb-5 rounded">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">Linux<br>Server</div>
+                    </div>
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6  ">
+                    <div class="progress az shadow p-3 mb-5 rounded">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">Microsoft<br>Azure</div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6  ">
+                    <div class="progress ps shadow p-3 mb-5 rounded">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">Powershell</div>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-4 col-6  ">
+                    <div class="progress vc shadow p-3 mb-5 rounded">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">Version<br>control</div>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-4 col-6  ">
+                    <div class="progress im shadow p-3 mb-5 rounded">
+                        <span class="progress-left">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <span class="progress-right">
+                            <span class="progress-bar"></span>
+                        </span>
+                        <div class="progress-value">Incident<br>Management</div>
+                    </div>
+
+
+
+
+
+                </div>
+
+
+
+            </div>
+
+        </section>
+        <!-- end of the progress bar -->
+        
+
+<!-- start of preoject -->
+
+
+<section id="project">
+    <div class="deah">
+        <div>
+            <h1 class="pjh1">My Projects</h1>
+        </div>
+    </div>
+    <div class="niam">
+        <ul id="cards">
+    
+            <li class="cards" id="card_2">
+                <div class="card__content">
+                    <div>
+                        <h2 class="pjh2">Huddle</h2>
+                        <p class="pjp">This is a landing page of a website called huddle. </p>
+                        <p class="pjp"><a href="https://raghurengu.github.io/HTML-CSS_beginnner_project" target="blank" class="btn btn--accent">View project</a></p>
+                    </div>
+                    <figure>
+                        <img src="./Hud.PNG" alt="Image description" >
+                    </figure>
+                </div>
+            </li>
+
+            <li class="cards" id="card_1">
+                <div class="card__content">
+                    <div>
+                        <h2 class="pjh2">AirBnB Clone</h2>
+                        <p class="pjp">This is a clone of AirBnB. It's made with react and the data given are dynamic and it's not a static page.</p>
+                        <p class="pjp"><a href="https://raghurengu.github.io/Airbnb_Clone_React-JS/" target="blank" class="btn btn--accent">view project</a></p>
+                    </div>
+                    <figure>
+                        <img src="./airs.PNG" alt="Image description" >
+                    </figure>
+                </div>
+            </li>
+
+    
+            <li class="cards" id="card_3">
+                <div class="card__content">
+                    <div>
+                        <h2 class="pjh2">My portfolio</h2>
+                        <p class="pjp">This is one of the cool portfolio I have created for myself.</p>
+                        <p class="pjp"><a href="https://raghurengu.github.io/Airbnb_Clone_React-JS/" target="blank" class="btn btn--accent">View project</a></p>
+                    </div>
+                    <figure>
+                        <img src="./portfolio.PNG" alt="Image description" >
+                    </figure>
+                </div>
+            </li>
+    
+        </ul>
+    </div>
+    </section>
+    
+    
+    <!-- end of project  -->
+
+
+
+
+
+
+
+
+            <!-- this is for footer -->
+
+            <section class="deneb_cta" id="contact">
+                <div class="container">
+                    <div class="cta_wrapper">
+                        <div class="row align-items-center">
+                            <div class="col-lg-7">
+                                <div class="cta_content">
+                                    <h3>Have Any Project in Mind ?</h3>
+                                    <p>Teamwork makes the difference between scrap metal and a hammer. Let us work together to make a beautiful idea come live into this world of internet. </p>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="button_box">
+                                    <a href="mailto:raghurengu005@gmail.com" class="btn btn-warning">Hire Me</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="deneb_footer">
+                <div class="widget_wrapper" style="background-image: url(http://demo.tortoizthemes.com/deneb-html/deneb-ltr/assets/images/footer_bg.png);">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="widget widegt_about">
+                                    <div class="widget_title">
+                                        <img src="assets/images/logo_1.png" class="img-fluid" alt="">
+                                    </div>
+                                    <p>Don't hesitate to contact me. Come lets have a dinner together and disccuss about our new project.</p>
+                                    <ul class="social">
+                                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="widget widget_link">
+                                    <div class="widget_title">
+                                        <h4>Links</h4>
+                                    </div>
+                                    <ul>
+                                        <li><a href="#home">Home</a></li>
+                                        <li><a href="#about">About Me</a></li>
+                                        <li><a href="#skills">Skills</a></li>
+                                        <li><a href="#project">Projects</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 col-sm-12">
+                                <div class="widget widget_contact">
+                                    <div class="widget_title">
+                                        <h4>Contact Me</h4>
+                                    </div>
+                                    <div class="contact_info">
+                                        <div class="single_info">
+                                            <div class="icon">
+                                                <i class="fas fa-phone-alt"></i>
+                                            </div>
+                                            <div class="info">
+                                                <p><a href="tel:+1234567890">1800-000-4444</a></p>
+                                                <p><a href="tel:+9876543210">+91 777-888-9999</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="single_info">
+                                            <div class="icon">
+                                                <i class="fas fa-envelope"></i>
+                                            </div>
+                                            <div class="info">
+                                                <p><a href="mailto:raghu@raghumail.com">raghu@raghumail.com</a></p>
+                                                <p><a href="mailto:renganathan@mydomain.com">renganathan@mydomain.com</a></p>
+                                            </div>
+                                        </div>
+                                        <div class="single_info">
+                                            <div class="icon">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <div class="info">
+                                                <p>766, Tirunelveli, Tamil Nadu,<span>India.</span></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="copyright_area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="copyright_text">
+                                    <p>Copyright &copy; 2023 All rights reserved.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            <!-- end of the footer -->
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- this is for the navbar and this should be at the end only then it works -->
+        <script>
+            // Get all sections that have an ID defined
+            const sections = document.querySelectorAll("section[id]");
+
+            // Add an event listener listening for scroll
+            window.addEventListener("scroll", navHighlighter);
+
+            function navHighlighter() {
+
+                // Get current scroll position
+                let scrollY = window.pageYOffset;
+
+                // Now we loop through sections to get height, top and ID values for each
+                sections.forEach(current => {
+                    const sectionHeight = current.offsetHeight;
+                    const sectionTop = current.offsetTop - 50;
+                    sectionId = current.getAttribute("id");
+
+                    /*
+                    - If our current scroll position enters the space where current section on screen is, add .active class to corresponding navigation link, else remove it
+                    - To know which link needs an active class, we use sectionId variable we are getting while looping through sections as an selector
+                    */
+                    if (
+                        scrollY > sectionTop &&
+                        scrollY <= sectionTop + sectionHeight
+                    ) {
+                        document.querySelector(".navigation a[href*=" + sectionId + "]").classList.add(
+                        "active");
+                    } else {
+                        document.querySelector(".navigation a[href*=" + sectionId + "]").classList.remove(
+                            "active");
+                    }
+                });
+            }
+            document.onreadystatechange = function () {
+                if (document.readyState !== "complete") {
+                    document.querySelector(
+                        "body").style.visibility = "hidden";
+                    document.querySelector(
+                        ".loader").style.visibility = "visible";
+                } else {
+                    document.querySelector(
+                        ".loader").style.display = "none";
+                    document.querySelector(
+                        "body").style.visibility = "visible";
+                }
+            };
+        </script>
+        <!-- don't edit the above script -->
+
+</body>
+
+</html>
